@@ -1,4 +1,22 @@
+html, body {
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 18px;
+	line-height: 30px;
+	text-shadow: 1px 1px 0px #fff;
+}
+
+body {
+	text-align: center;
+}
+
 img {
 	width: 40%;
 	height: 40%;
+	border-radius: 50%;
+}
+
+h1 {
+	font-size:36px;
+	line-height: 50px;
+	font-weight: bold;
 }

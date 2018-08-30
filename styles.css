@@ -15,17 +15,19 @@ html, body {
 	font-size: 18px;
 	line-height: 30px;
 	color: #444;
-	text-shadow: 1px 1px 0px #fff;
-}
+	}
 
 body {
 	text-align: center;
+	background-color: #8e99f3;
+	color: #ffffff;
 }
 
 img {
 	width: 40%;
 	height: 40%;
 	border-radius: 50%;
+	max-width: 400px;
 }
 
 h1 {
@@ -50,6 +52,8 @@ section {
 	justify-content: center;
 	border: 0;
 	padding: 0;
+	background-color: #5c6bc0;
+	max-width: none;
 }
 
 .nav {
@@ -57,17 +61,17 @@ section {
 	display: flex;
 	position: fixed;
 	z-index: 9999;
-}
+	}
 
 .nav li {
 	list-style-type: none;
 	flex-grow: 1;
-}
+	}
 
 .nav li a {
 	display: block;
 	line-height: 50px;
-	background-color: #fff;
+	background-color: #26418f;
 }
 
 .nav li a:hover {

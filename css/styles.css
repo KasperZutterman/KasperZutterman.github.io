@@ -82,6 +82,7 @@ section {
 	z-index: 9999;
 	text-align:center;
 	list-style:none;
+	padding-top: 16px;
 }
 
 .social li {

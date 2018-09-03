@@ -17,7 +17,7 @@ html, body {
 	color: #444;
 	}
 
-body {	
+body {
 	text-align: center;
 	background-color: #8e99f3;
 	color: #ffffff;
@@ -76,4 +76,21 @@ section {
 
 .nav li a:hover {
 	background-color: #666;
+}
+
+.social {
+	z-index: 9999;
+	text-align:center;
+	list-style:none;
+}
+
+.social li {
+	list-style-type: none;
+	display: inline;
+	padding: 0 16px;
+
+}
+
+.social li a {
+	display: inline-block;
 }

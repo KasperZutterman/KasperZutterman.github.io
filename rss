@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title><![CDATA[Kasper Zutterman's Blog]]></title><description><![CDATA[Thoughts, stories and ideas.]]></description><link>https://kasperzutterman.github.io/blog//</link><image><url>https://kasperzutterman.github.io/blog//favicon.png</url><title>Kasper Zutterman&apos;s Blog</title><link>https://kasperzutterman.github.io/blog//</link></image><generator>Ghost 2.9</generator><lastBuildDate>Wed, 13 May 2020 21:58:01 GMT</lastBuildDate><atom:link href="https://kasperzutterman.github.io/blog//rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Deploy a Ghost blog on GitHub Pages using Gatsby]]></title><description><![CDATA[If you want to use Ghost as your cms for hosting a blog on GitHub Pages, you need to have a static site generator. We will be using Gatsby to populate the content from our local Ghost installation and deploy it to GitHub Pages.]]></description><link>http://localhost:2368/deploy-a-ghost-blog-on-github-pages-using-gatsby/</link><guid isPermaLink="false">Ghost__Post__5eaecfedf1f71b3ef4680ace</guid><dc:creator><![CDATA[Kasper Zutterman]]></dc:creator><pubDate>Sun, 03 May 2020 18:53:54 GMT</pubDate><media:content url="http://localhost:2368/content/images/2020/05/Ghost---GitHub---Gatsby-1.png" medium="image"/><content:encoded><![CDATA[<img src="http://localhost:2368/content/images/2020/05/Ghost---GitHub---Gatsby-1.png" alt="Deploy a Ghost blog on GitHub Pages using Gatsby"/><p>If you want to use Ghost as your cms for hosting a blog on GitHub Pages, you need to have a static site generator. We will be using Gatsby to populate the content from our local Ghost installation and deploy it to GitHub Pages.</p><hr><!--kg-card-begin: markdown--><h3 id="prerequisites">Prerequisites</h3>
+<p>In order to follow this tutorial, you should already have <a href="https://nodejs.org/en/download/">Node.js</a> and <a href="https://git-scm.com/downloads">Git</a> installed.</p>
+<h3 id="generateblog">Generate Blog</h3>
+<ol>
+<li>Install the Ghost-CLI</li>
+</ol>
+<pre><code>npm install ghost-cli@latest -g
+</code></pre>
+<ol start="2">
+<li>Make 2 new directories to house your blog</li>
+</ol>
+<pre><code>mkdir blog-ghost blog-gatsby
+</code></pre>
+<ol start="3">
+<li>Navigate into the new <code>blog-ghost</code> directory</li>
+</ol>
+<pre><code>cd blog-ghost
+</code></pre>
+<ol start="4">
+<li>Install Ghost locally</li>
+</ol>
+<pre><code>ghost install local
+</code></pre>
+<ol start="5">
+<li>Set up your freshly installed local instance of Ghost at <code>https://localhost:2368</code><br>
+(follow the installation instructions)</br></li>
+<li>Navigate into the new <code>blog-gatsby</code> directory</li>
+</ol>
+<pre><code>cd ../blog-gatsby
+</code></pre>
+<ol start="7">
+<li>Install the Gatsby-CLI</li>
+</ol>
+<pre><code>npm install gatsby-cli -g
+</code></pre>
+<ol start="8">
+<li>Install <code>gatsby-starter-ghost</code> using Gatsby-CLI</li>
+</ol>
+<pre><code>gatsby new . https://github.com/TryGhost/gatsby-starter-ghost.git
+</code></pre>
+<ol start="9">
+<li>Before customising test run Gatsby</li>
+</ol>
+<pre><code>gatsby develop
+</code></pre>
+<ol start="10">
+<li>Navigate to <code>http://localhost:8000/</code></li>
+<li>Generate Gatsby Integration:<br>
+Inside the Ghost Admin Panel at <code>https://localhost:2368</code>, go to the &quot;Integrations&quot; screen and click &quot;+ Add custom integration&quot;</br></li>
+<li>Copy generated &quot;apiUrl&quot; and &quot;contentApiKey&quot; into blog-gatsby/.ghost.json</li>
+</ol>
+<pre><code>{
+  &quot;development&quot;: {
+    &quot;apiUrl&quot;: &quot;http://localhost:2368&quot;,
+    &quot;contentApiKey&quot;: &quot;&lt;yourContentApiKey&gt;&quot;
+  },
+  &quot;production&quot;: {
+    &quot;apiUrl&quot;: &quot;http://localhost:2368&quot;,
+    &quot;contentApiKey&quot;: &quot;&lt;yourContentApiKey&gt;&quot;
+  }
+}
+</code></pre>
+<ol start="13">
+<li>Start Gatsby development</li>
+</ol>
+<pre><code>gatsby develop
+</code></pre>
+<h3 id="publishblog">Publish Blog</h3>
+<ol>
+<li>Build Blog</li>
+</ol>
+<pre><code>gatsby build
+</code></pre>
+<ol start="2">
+<li>View production version at <code>https://localhost:9000</code></li>
+</ol>
+<pre><code>gatsby serve
+</code></pre>
+<ol start="3">
+<li>Integrate Gatsby Blog to GitHub Pages:<br>
+Inside <code>blog-gatsby/</code></br></li>
+</ol>
+<pre><code>npm install gh-pages
+</code></pre>
+<ol start="4">
+<li>Add GitHub repository name to <code>gatsby-config.js</code></li>
+</ol>
+<pre><code>module.exports = {
+  pathPrefix: &quot;/&lt;repository_name&gt;&quot;,
+}
+</code></pre>
+<ol start="5">
+<li>Add a custom deploy command to package.json</li>
+</ol>
+<pre><code>{
+  &quot;scripts&quot;: {
+    &quot;deploy&quot;: &quot;gatsby build --prefix-paths &amp;&amp; gh-pages -d public&quot;
+  }
+}
+</code></pre>
+<p>This creates a deploy command that build a static version of your blog and pushes it to GitHub<br>
+6. Add your GitHub repository as the remote origin to your Gatsby Git repository</br></p>
+<pre><code>git remote add origin https://&lt;username&gt;.github.com/&lt;repository_name&gt;
+</code></pre>
+<ol start="7">
+<li>Deploying your Blog:</li>
+</ol>
+<pre><code>npm run deploy
+</code></pre>
+<p>You will now be able to see your blog at <code>&lt;username&gt;.github.io&lt;repository_name&gt;</code>.</p>
+<h3 id="additionalresourcesthatmaybehelpful">Additional resources that may be helpful</h3>
+<ul>
+<li><a href="https://www.gatsbyjs.org/docs/sourcing-from-ghost/">Sourcing from Ghost</a> - Gatsby documentation</li>
+<li><a href="https://ghost.org/docs/api/v3/gatsby/">Working With Gatsby</a> - Ghost documentation</li>
+<li><a href="https://www.gatsbyjs.org/blog/2019-01-14-modern-publications-with-gatsby-ghost/">Modern publications with Gatsby &amp; Ghost</a> - by John O'Nolan</li>
+<li><a href="https://blog.bitsrc.io/deploy-a-gatsby-site-on-github-pages-for-free-f18853c1b7a9">Deploy a Gatsby Site on GitHub Pages for Free</a> - by Shaumik Daityari</li>
+</ul>
+<h3 id="conclusion">Conclusion</h3>
+<p>In this post, you have accomplished the following:</p>
+<ul>
+<li>Install local Ghost crm blog</li>
+<li>Install Gatsby blog using Ghost crm data</li>
+<li>Deploy static Gatsby blog to GitHub Pages</li>
+</ul>
+<p>If you have any further questions, please feel free to contact me on <a href="https://twitter.com/KasperZutterman">Twitter</a></p>
+<!--kg-card-end: markdown--><p/><p/><p/></hr>]]></content:encoded></item><item><title><![CDATA[Welcome to my blog!]]></title><description><![CDATA[Hello world!
+I'm Kasper Zutterman, a 20 year old Information Engineering Technology student at Ghent University. I am born an raised in Belgium and enjoy practicing track & field in my spare time. ]]></description><link>http://localhost:2368/welcome-to-my-blog/</link><guid isPermaLink="false">Ghost__Post__5eadcc9ad7e0cf58a86eb0a0</guid><dc:creator><![CDATA[Kasper Zutterman]]></dc:creator><pubDate>Sun, 03 May 2020 07:38:42 GMT</pubDate><content:encoded><![CDATA[<h3 id="hello-world-">Hello world!</h3><p>I'm Kasper Zutterman, a 20 year old Information Engineering Technology student at Ghent University. I am born an raised in Belgium and enjoy practicing track &amp; field in my spare time. </p><p>Ok, let’s move on to what this blog is about. Since my other passion is coding, this will be a technology and programming related blog. I want to share my experience, helpful guides and fascinating projects.</p><p>Glad you came by.  I wanted to welcome you and let you know I appreciate you spending time here at my blog very much.</p><p>Another thing I will always appreciate is your feedback to the blog.  If you have any comments or suggestions I welcome them and would love to hear them. So please feel free to contact me via social media!</p><p>If you want to know more about me just click <a href="https://kasperzutterman.github.io/">here</a>, and always feel free to leave any comment, question or feedback.</p><p>Hope you enjoy it :)</p><p>Cheers,</p><p>Kasper</p>]]></content:encoded></item></channel></rss>

@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+Sitemap: https://kasperzutterman.github.io/sitemap.xml
+Host: https://kasperzutterman.github.io

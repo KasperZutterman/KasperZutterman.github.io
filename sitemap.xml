@@ -4,8 +4,8 @@
 <url> <loc>https://kasperzutterman.com/categories</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kasperzutterman.com/about/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kasperzutterman.com/contacts/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://kasperzutterman.com/posts/welcome-to-my-blog</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kasperzutterman.com/posts/deploy-a-ghost-blog-on-github-pages-using-gatsby</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://kasperzutterman.com/posts/welcome-to-my-blog</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kasperzutterman.com/posts/programmatically-calculate-similarities</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kasperzutterman.com/posts/my-osoc-2020-experience</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kasperzutterman.com/tag/gatsby</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>

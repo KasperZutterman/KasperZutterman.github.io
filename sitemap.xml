@@ -7,14 +7,18 @@
 <url> <loc>https://kasperzutterman.com/posts/welcome-to-my-blog</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kasperzutterman.com/posts/deploy-a-ghost-blog-on-github-pages-using-gatsby</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kasperzutterman.com/posts/programmatically-calculate-similarities</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://kasperzutterman.com/posts/my-osoc-2020-experience</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kasperzutterman.com/tag/gatsby</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kasperzutterman.com/tag/ghost</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kasperzutterman.com/tag/git-hub-pages</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://kasperzutterman.com/tag/internship</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://kasperzutterman.com/tag/open-summer-of-code</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kasperzutterman.com/tag/programming</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kasperzutterman.com/tag/similarity</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kasperzutterman.com/tag/technology</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kasperzutterman.com/tag/web-development</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kasperzutterman.com/category/introduction</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://kasperzutterman.com/category/open-summer-of-code</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kasperzutterman.com/category/web-development</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kasperzutterman.com/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>
